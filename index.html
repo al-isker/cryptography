@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Methods Cryptography</title>
+    <link rel="icon" href="Photo/icon_border.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="Main/CSS/reset.css">
+    <link rel="stylesheet" href="Product/noUiSlider/nouislider.min.css">
+    <link rel="stylesheet" href="Main/CSS/main.css">
+    <link rel="stylesheet" href="Main/CSS/header.css">
+    <link rel="stylesheet" href="Product/CSS/search.css">
+    <link rel="stylesheet" href="Product/CSS/product.css">
+    <link rel="stylesheet" href="Main/CSS/footer.css">
+    <link rel="stylesheet" href="Main/CSS/modalWindow.css">
+
+    <script src="Ciphers/Ciphers.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title">
+                <h1>Cryptography</h1>
+            </div>
+
+            <nav class="navbar">
+                <div class="link">
+                    <a href="#">Home</a>
+                </div>
+                <div class="link active">
+                    <a href="index.html">Product</a>
+                </div>
+                <div class="link">
+                    <a href="#">About</a>
+                </div>
+
+                <label class="switch-mode">
+                    <input type="checkbox">
+                    <span class="circle"></span>
+                    <span class="sun material-icons-sharp">light_mode</span>
+                    <span class="moon material-icons-sharp">nights_stay</span>
+                </label>
+
+            </nav>
+        </header>
+
+        <main>
+            <section class="search">
+                <div class="btn-filt-sort">
+                    <button type="button" class="btn-filt">
+                        <span class="material-icons-sharp icon">tune</span>
+                        <span class="caption">Filt</span>
+                    </button>
+                    <button type="button" class="btn-sort">
+                        <span class="caption">Sort</span>
+                        <span class="material-icons-sharp icon">filter_list</span>
+                    </button>
+                </div>
+
+                <div class="opened-favorite">
+                    <button type="button" class="btn btn-back">Back</button>
+                    <div class="title">Favorite</div>
+                </div>
+
+                <div class="input-search">
+                    <label class="search-line">
+                        <input type="text" placeholder="Search cipher" maxlength="30">
+                    </label>
+                    <button type="button" class="btn-search">
+                        <span class="material-icons-sharp icon">search</span>
+                    </button>
+                </div>
+
+                <div class="favorite">
+                    <button type="button" class="btn btn-open-favorite">
+                        <span class="counter"></span>
+                        <span class="material-icons-sharp icon">favorite_border</span>
+                    </button>
+                </div>
+            </section>
+
+
+
+            <section class="product">
+                <aside class="sidebar">
+                    <article class="sort">
+                        <label>
+                            <input class="material-icons-sharp" type="radio" name="sort" value="byAlphabetically" checked>
+                            <span>by alphabetically</span>
+                        </label>
+                        <label>
+                            <input class="material-icons-sharp" type="radio" name="sort" value="byTime">
+                            <span>by time</span>
+                        </label>
+                        <label>
+                            <input class="material-icons-sharp" type="radio" name="sort" value="byProtection">
+                            <span>by protection</span>
+                        </label>
+                        <label>
+                            <input class="material-icons-sharp" type="radio" name="sort" value="popular" disabled>
+                            <span>by popularity</span>
+                        </label>
+                    </article>
+
+                    <article class="filters">
+                        <div class="filter open">
+                            <button type="button" class="btn btn-type">
+                                <span class="caption">Type</span>
+                                <span class="material-icons-sharp icon">expand_more</span>
+                            </button>
+                            <div class="checkboxes type"></div>
+                        </div>
+
+                        <div class="filter open">
+                            <button type="button" class="btn btn-lang">
+                                <span class="caption">Language</span>
+                                <span class="material-icons-sharp icon">expand_more</span>
+                            </button>
+                            <div class="checkboxes language"></div>
+                        </div>
+
+                        <div class="filter open">
+                            <button type="button" class="btn btn-time">
+                                <span class="caption">Time</span>
+                                <span class="material-icons-sharp icon">expand_more</span>
+                            </button>
+                            <div class="slider time"></div>
+                        </div>
+
+                        <div class="filter open">
+                            <button type="button" class="btn btn-time">
+                                <span class="caption">Protection</span>
+                                <span class="material-icons-sharp icon">expand_more</span>
+                            </button>
+                            <div class="slider protection"></div>
+                        </div>
+                    </article>
+                </aside>
+
+                <main class="result">
+                    <div class="check-filters">
+                        <div class="filter clear-search">
+                            <span class="text">Clear search</span>
+                            <span class="icon material-icons">cancel</span>
+                        </div>
+                        <div class="reset-filters">
+                            <div class="filter">
+                                <span class="text">Reset filters</span>
+                                <span class="icon material-icons">cancel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list">
+                        <div class="loading">
+                            <p>Loading...</p>
+                            <p><span class="material-icons-sharp">settings</span></p>
+                        </div>
+
+                        <div class="not-found">
+                            <div class="info">
+                                <p class="title">Sorry</p>
+                                <p class="subtitle">Nothing found for request</p>
+                                <button type="button" class="btn-back">back</button>
+                            </div>
+                            <div class="picture">
+                                <span>ERROR</span>
+                                <img src="Photo/broken_wire_long.png" alt="sorry">
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </section>
+        </main>
+
+        <footer>
+            <div class="info">
+                <div class="title">
+                    <h1>Cryptography</h1>
+                </div>
+                <div class="list">
+                    <div class="caption">Connection</div>
+                    <div class="li">
+                        <div class="icon material-icons-sharp">phone</div>
+                        <div class="text">+7(989)-665-34-36</div>
+                    </div>
+                    <div class="li">
+                        <div class="icon material-icons-sharp">email</div>
+                        <div class="text">balisker@mail.ru</div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="caption">Location</div>
+                    <div class="li">
+                        <div class="icon material-icons-sharp">place</div>
+                        <div class="text">DSU</div>
+                    </div>
+                    <div class="li">
+                        <div class="icon material-icons-sharp">push_pin</div>
+                        <div class="text">Department of Information Security</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <p>Pet Project 2023</p>
+            </div>
+
+        </footer>
+    </div>
+
+    <div class="blackout">
+        <div class="window">
+            <div class="control">
+                <p class="description"></p>
+                <button type="button" class="btn btn-close">
+                    <span class="material-icons-sharp">close</span>
+                </button>
+            </div>
+            <div class="main">
+                <p>This page is not ready</p>
+                <img src="Photo/coffee.png" alt="picture coffee"/>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Main/JS/LD-mode.js"></script>
+    <script src="Product/JS/Search.js"></script>
+    <script src="Product/JS/Favorite.js"></script>
+    <script src="Product/JS/CheckFilters.js"></script>
+    <script src="Product/noUiSlider/nouislider.min.js"></script>
+    <script src="Product/JS/FiltSort.js"></script>
+    <script src="Product/JS/CardsProduct.js"></script>
+    <script src="Product/JS/link.js"></script>
+    <script src="Main/JS/test.js"></script>
+
+</body>
+</html>

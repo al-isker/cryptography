@@ -1,0 +1,43 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --main-red: #F75A54;
+
+    --bg-black-white: #181a1e;
+    --bg-light-dark: #22262a;
+    --bg-hover-dark-light: #3b252c;
+    --text-dark-light: #22262a;
+    --text-light-dark: #fff;
+    --shadow: #000;
+}
+
+.light-mode {
+    --bg-black-white: #d7d7d7;
+    --bg-light-dark: #e5e5e5;
+    --bg-hover-dark-light: #eac9c9;
+    --text-dark-light: #fff;
+    --text-light-dark: #22262a;
+    --shadow: #bebebe;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1920px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-black-white);
+    color: var(--white);
+}
+
+body .container {
+    margin: 25px;
+    border-radius: 10px;
+}
+
+.material-icons-sharp {
+    font-size: 24px;
+    color: var(--main-red);
+}
+
+* {
+    font-family: Poppins, sans-serif;
+}

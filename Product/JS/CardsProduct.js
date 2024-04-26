@@ -4,6 +4,8 @@ function getCardProduct(cipher) {
         name += `<span>${char}</span>`;
     }
 
+    const URL = `/Ciphers/${cipher.type[0].toUpperCase() + cipher.type.slice(1)}${cipher.name}.zip`;
+
     const addFavorite = cipher.favorite ? 'checked' : '';
 
     return `
@@ -46,10 +48,10 @@ function getCardProduct(cipher) {
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-more-info">
-                    <span class="text">more info</span>
-                    <span class="icon material-icons-sharp">double_arrow</span>
-                </button>
+                <a class="btn" download href="${URL}">
+                    <span class="text">Download</span>
+                    <span class="icon material-icons-sharp">download</span>
+                </a>
             </div>
         </div>
     `;
@@ -91,12 +93,7 @@ function drawCards(arr) {
         selectSort(arr).forEach(cipher => {
             listProductBlock.insertAdjacentHTML('beforeend', getCardProduct(cipher));
 
-            const btnMoreInfo = listProductBlock.querySelector('.card:last-child .btn-more-info');
             const btnToggleFavorite = listProductBlock.querySelector('.card:last-child .favorite-check');
-
-            btnMoreInfo.addEventListener('click', function() {
-                openMoreInfo(cipher);
-            });
 
             btnToggleFavorite.addEventListener('change', function() {
                 toggleFavorite(this, cipher);
